@@ -1,0 +1,17 @@
+<ion-view view-title="Testrite Group">
+  <ion-content>
+	<ion-list>
+
+    <div class="list card" ng-repeat="groupInfo in groupInfos">
+		  <div class="item">
+		    <h1>{{groupInfo.name}}</h1>
+		  </div><a   href="#/app/groupInfo/{{groupInfo.routeUrl}}">
+		  <div class="item item-image">
+		    <img src="img/{{groupInfo.imageUrl}}">
+		  </div>
+		</a>
+
+	</div>
+
+  </ion-content>
+</ion-view>

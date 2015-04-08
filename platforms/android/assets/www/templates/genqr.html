@@ -1,0 +1,21 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">QR Code</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeGenerate()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="generate(qrData)">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">QR Text</span>
+          <input type="text" ng-model="qrData.qrValue">
+        </label>
+        <label class="item">
+          <button class="button button-block button-stable" type="submit">Generate QR Code</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

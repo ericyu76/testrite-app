@@ -26,6 +26,22 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
     <script src="js/qrcode.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+    // device APIs are available
+    function onDeviceReady() {
+
+        window.analytics.debugMode();
+        console.log('GA: starting');
+        if(window.analytics){
+          console.log('GA:startTrackerWithId');
+          window.analytics.startTrackerWithId('UA-61789172-1');
+        }
+    }
+    </script>
   </head>
 
   <body ng-app="starter">

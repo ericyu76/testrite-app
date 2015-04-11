@@ -33,8 +33,6 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('OverviewCtrl', function() {
-})
 
 .controller('QRCodeCtrl', function($scope, $ionicModal, QRService) {
   $scope.qrData = {};
@@ -58,6 +56,10 @@ angular.module('starter.controllers', [])
     doqr(qrData.qrValue);
     $scope.qrTextDisplay = qrData.qrValue;
     $scope.closeGenerate();
+    if(window.analytics){
+          console.log('GA:trackEvent QRGenerate sucess');
+          window.analytics.trackEvent('QR', 'QRGenerate sucess', 'Label', 1);
+    }
   };
 
   $scope.doScan = function(){
@@ -72,7 +74,7 @@ angular.module('starter.controllers', [])
         $scope.scanResultValue1 = result[1];
         myurl = result[0];
         var scanResult = {
-          scanDate: Utils.getDateFormatStr(new Date()),
+          scanDate: new Date(),
           resultValue: result[0],
           resultType: result[1]
         };
@@ -84,6 +86,10 @@ angular.module('starter.controllers', [])
         }
         qrHistoryData.push(scanResult);
         localStorage.setItem('qrHistoryData',angular.toJson(qrHistoryData));
+        if(window.analytics){
+          console.log('GA:trackEvent QRScan sucess');
+          window.analytics.trackEvent('QR', 'QRScan sucess', 'Label', 1);
+        }
 
       },
       function(error) {
@@ -96,12 +102,32 @@ angular.module('starter.controllers', [])
 })
 
 .controller('GroupInfoCtrl', function($scope, $stateParams) {
+  if(window.analytics){
+    window.analytics.trackView('GroupInfo');
+  }
+  
   $scope.groupInfos =[
-    {name: 'Overview', routeUrl: 'overview', id: '1', imageUrl: 'tr-logo.jpg'},
+    {name: 'Overview', routeUrl: 'overview', id: '1', imageUrl: 'logo_testrite.jpg'},
     {name: 'Vision', routeUrl: 'vision', id: '2', imageUrl: 'groupinfo-vision.jpg'},
     {name: 'Founders Message', routeUrl: 'overview', id: '3', imageUrl: 'groupinfo-foundermessage.jpg'},
     {name: 'CEOs Message', routeUrl: 'overview', id: '4', imageUrl: 'groupinfo-ceo-message.jpg'},
     {name: 'Milestone', routeUrl: 'overview', id: '5', imageUrl: 'groupinfo-milestone.jpg'},
     {name: 'Awards', routeUrl: 'overview', id: '6', imageUrl: 'groupinfo-award.jpg'}
   ];
-});
+})
+
+.controller('OverviewCtrl', function() {
+    if(window.analytics){
+      console.log('GA:trackview Overview');
+      window.analytics.trackView('Overview');
+    }
+})
+
+.controller('VisionCtrl', function() {
+    if(window.analytics){
+      console.log('GA:trackview Vision');
+      window.analytics.trackView('Vision');
+    }
+})
+
+;

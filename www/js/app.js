@@ -17,6 +17,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
   });
 })
 
@@ -43,7 +44,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: "/groupInfo/vision",
     views: {
       'menuContent': {
-        templateUrl: "templates/vision.html"
+        templateUrl: "templates/vision.html",
+        controller: 'VisionCtrl'
       }
     }
   })
@@ -62,7 +64,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: "/groupInfo/overview",
     views: {
       'menuContent': {
-        templateUrl: "templates/overview.html"
+        templateUrl: "templates/overview.html",
+        controller: 'OverviewCtrl'
       }
     }
   });

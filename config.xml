@@ -8,7 +8,7 @@
       Testrite Group Information Department
     </author>
     
-    <icon src="res/1024_1024_logo.png" />
+    <icon src="res/1024_1024_icon.png" />
     <content src="index.html" />
     <access origin="*" />
     <preference name="webviewbounce" value="false" />

@@ -30,41 +30,52 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     templateUrl: "templates/menu.html",
     controller: 'AppCtrl'
   })
-    .state('app.groupInfo', {
-      url: "/groupInfo",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/groupInfo.html",
-          controller: 'GroupInfoCtrl'
-        }
+  
+  .state('app.groupInfo', {
+    url: "/groupInfo",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/groupInfo/groupInfo.html",
+        controller: 'GroupInfoCtrl'
       }
-    })
+    }
+  })
 
-    .state('app.groupInfo-vision', {
+  .state('app.groupInfo-vision', {
     url: "/groupInfo/vision",
     views: {
       'menuContent': {
-        templateUrl: "templates/vision.html",
+        templateUrl: "templates/groupInfo/vision.html",
         controller: 'VisionCtrl'
       }
     }
   })
 
-    .state('app.qrcode', {
-      url: "/qrcode",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/qrcode.html",
-          controller: 'QRCodeCtrl'
-        }
+  .state('app.groupInfo-foundersMessage', {
+    url: "/groupInfo/foundersMessage",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/groupInfo/foundersMessage.html",
+        controller: 'VisionCtrl'
       }
-    })
+    }
+  })
+
+  .state('app.qrcode', {
+    url: "/qrcode",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/qrcode.html",
+        controller: 'QRCodeCtrl'
+      }
+    }
+  })
 
   .state('app.groupInfo-overview', {
     url: "/groupInfo/overview",
     views: {
       'menuContent': {
-        templateUrl: "templates/overview.html",
+        templateUrl: "templates/groupInfo/overview.html",
         controller: 'OverviewCtrl'
       }
     }

@@ -1,0 +1,23 @@
+<ion-view view-title="Testrite Group">
+  <ion-content padding="true">
+  	  <img class="img-responsive" src="img/logo_testrite.png">
+	  <ion-slide-box auto-play="true" does-continue="true"  show-pager="false" slide-interval="3000">
+		  <ion-slide ng-repeat="banner in banners">
+		    	<div class="item-image">
+					    <img class="img-responsive" src="{{banner.imageUrl}}">
+			    </div>
+		  </ion-slide>
+	  </ion-slide-box>
+	<ion-list>
+	    <div class="list card" ng-repeat="groupInfo in groupInfos">
+			  <div class="item">
+			    <h1>{{groupInfo.name}}</h1>
+			  </div><a href="#/app/groupInfo/{{groupInfo.routeUrl}}">
+			  <div class="item item-image">
+			    <img src="img/{{groupInfo.imageUrl}}">
+			  </div>
+			</a>
+		</div>
+    </ion-list>
+  </ion-content>
+</ion-view>

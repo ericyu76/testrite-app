@@ -105,11 +105,22 @@ angular.module('starter.controllers', [])
   if(window.analytics){
     window.analytics.trackView('GroupInfo');
   }
+
+  $scope.banners = [
+    {imageUrl: 'img/banner/background01.jpg'},
+    {imageUrl: 'img/banner/background02.jpg'},
+    {imageUrl: 'img/banner/background03.jpg'},
+    {imageUrl: 'img/banner/background04.jpg'},
+    {imageUrl: 'img/banner/background05.jpg'},
+    {imageUrl: 'img/banner/background06.jpg'},
+    {imageUrl: 'img/banner/background07.jpg'},
+    {imageUrl: 'img/banner/background08.jpg'}
+  ]
   
   $scope.groupInfos =[
-    {name: 'Overview', routeUrl: 'overview', id: '1', imageUrl: 'logo_testrite.jpg'},
+    {name: 'Overview', routeUrl: 'overview', id: '1', imageUrl: 'groupinfo-award.jpg'},
     {name: 'Vision', routeUrl: 'vision', id: '2', imageUrl: 'groupinfo-vision.jpg'},
-    {name: 'Founders Message', routeUrl: 'overview', id: '3', imageUrl: 'groupinfo-foundermessage.jpg'},
+    {name: 'Founders Message', routeUrl: 'foundersMessage', id: '3', imageUrl: 'groupinfo-foundermessage.jpg'},
     {name: 'CEOs Message', routeUrl: 'overview', id: '4', imageUrl: 'groupinfo-ceo-message.jpg'},
     {name: 'Milestone', routeUrl: 'overview', id: '5', imageUrl: 'groupinfo-milestone.jpg'},
     {name: 'Awards', routeUrl: 'overview', id: '6', imageUrl: 'groupinfo-award.jpg'}
